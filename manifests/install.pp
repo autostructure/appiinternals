@@ -12,9 +12,9 @@ class appinternals::install {
 
   # Grab file
   archive { '/home/opnet/appinternals_agent_latest_linux.gz':
-    source => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
-    target => '/home/opnet',
-    notify => File['/home/opnet/appinternals_agent_latest_linux'],
+    source  => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
+    extract => true,
+    notify  => File['/home/opnet/appinternals_agent_latest_linux'],
   }
 
   # Make sure script is executable
