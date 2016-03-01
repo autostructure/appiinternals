@@ -3,8 +3,22 @@
 # This class is called from appinternals for install.
 #
 class appinternals::install {
-
-  package { $::appinternals::package_name:
+  # Create opnet user
+  user {'opnet':
     ensure => present,
+    home   => '/home/opnet',
+    before => Staging::Deploy['appinternals_agent_latest_linux.gz'],
+  }
+
+  # Grab file
+  staging::deploy { 'appinternals_agent_latest_linux.gz':
+    source => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
+    target => '/home/opnet',
+    before => File['/home/opnet/appinternals_agent_latest_linux'],
+  }
+
+  # Make sure script is executable
+  file {'/home/opnet/appinternals_agent_latest_linux':
+    mode => '0755',
   }
 }

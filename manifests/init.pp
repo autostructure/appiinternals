@@ -11,8 +11,8 @@
 #   e.g. "Specify one or more upstream ntp servers as an array."
 #
 class appinternals (
-  $package_name = $::appinternals::params::package_name,
-  $service_name = $::appinternals::params::service_name,
+  #  $package_name = $::appinternals::params::package_name,
+  #$service_name = $::appinternals::params::service_name,
 ) inherits ::appinternals::params {
 
   # validate parameters here
