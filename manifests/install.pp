@@ -11,10 +11,10 @@ class appinternals::install {
   }
 
   # Grab file
-  staging::deploy { 'appinternals_agent_latest_linux.gz':
+  archive { '/home/opnet/appinternals_agent_latest_linux.gz':
     source => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
     target => '/home/opnet',
-    before => File['/home/opnet/appinternals_agent_latest_linux'],
+    notify => File['/home/opnet/appinternals_agent_latest_linux'],
   }
 
   # Make sure script is executable
