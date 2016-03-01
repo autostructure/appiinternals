@@ -7,7 +7,7 @@ class appinternals::install {
   user {'opnet':
     ensure => present,
     home   => '/home/opnet',
-    before => Staging::Deploy['appinternals_agent_latest_linux.gz'],
+    before => Archive['/home/opnet/appinternals_agent_latest_linux.gz'],
   }
 
   # Grab file
