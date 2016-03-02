@@ -37,7 +37,7 @@ class appinternals::install {
     target => '/home/opnet',
     notify => [
       File['/home/opnet/appinternals_agent_latest_linux'],
-      Exec["/home/opnet/appinternals_agent_latest_linux ${appinternals_install_stdin}"]
+      Exec["appinternals_agent_latest_linux ${appinternals_install_stdin}"]
     ],
   }
 
