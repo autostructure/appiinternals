@@ -20,6 +20,7 @@ class appinternals::install {
 
   # Make sure script is executable
   file {'/home/opnet/appinternals_agent_latest_linux':
-    mode => '0755',
+    ensure => file,
+    mode   => '0755',
   }
 }
