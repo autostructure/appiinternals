@@ -57,7 +57,17 @@ class appinternals::install {
   # Run the script onetime after unpack
   exec {'dsactl start':
     cwd         => '/home/opnet',
-    path        => '/opt/opnet/Panorama/hedzup/mn/bin',
+    path        => [
+      '/opt/opnet/Panorama/hedzup/mn/bin',
+      '/usr/local/sbin',
+      '/sbin',
+      '/bin',
+      '/usr/sbin',
+      '/usr/bin',
+      '/root/bin',
+      '/usr/local/bin',
+      '/opt/puppetlabs/bin',
+    ],
     user        => 'opnet',
     refreshonly => true,
   }
