@@ -17,17 +17,18 @@ class appinternals::install {
     END
     | EOT
 
-  # Create opnet user home directory
-  file {'/home/opnet':
-    ensure => directory,
-    before => User['opnet'],
-  }
-
   # Create opnet user
   user {'opnet':
     ensure => present,
     home   => '/home/opnet',
+    before => File['/home/opnet'],
+  }
+
+  # Create opnet user home directory
+  file {'/home/opnet':
+    ensure => directory,
     before => ::Staging::Deploy['appinternals_agent_latest_linux.gz'],
+    owner  => 'opnet',
   }
 
   # Download latest install and unpack to opnet home dir
