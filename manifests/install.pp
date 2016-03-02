@@ -7,11 +7,11 @@ class appinternals::install {
   user {'opnet':
     ensure => present,
     home   => '/home/opnet',
-    before => Archive['appinternals_agent_latest_linux.gz'],
+    before => Archive['/home/opnet/appinternals_agent_latest_linux.gz'],
   }
 
   # Grab file
-  archive { 'appinternals_agent_latest_linux.gz':
+  archive { '/home/opnet/appinternals_agent_latest_linux.gz':
     source       => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
     extract      => true,
     extract_path => '/home/opnet',
