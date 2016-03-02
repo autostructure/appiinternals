@@ -20,4 +20,21 @@ class appinternals::install {
   file {'/home/opnet/appinternals_agent_latest_linux':
     mode => '0755',
   }
+
+  $appinternals_install_stdin = @(EOT)
+    <<END
+    1
+    /tmp
+    opnet
+    /opt/opnet
+    y
+    10.250.32.21
+    y
+    yes
+    END
+    | EOT
+
+  exec {"/home/opnet/appinternals_agent_latest_linux ${$appinternals_install_stdin}":
+    path => '/home/opnet',
+  }
 }
