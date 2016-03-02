@@ -43,13 +43,21 @@ class appinternals::install {
 
   # Make sure script is executable
   file {'/home/opnet/appinternals_agent_latest_linux':
-    mode => '0755',
-    before => Exec["/home/opnet/appinternals_agent_latest_linux ${appinternals_install_stdin}"],
+    mode   => '0755',
+    before => Exec["appinternals_agent_latest_linux ${appinternals_install_stdin}"],
   }
 
   # Run the script onetime after unpack
-  exec {"/home/opnet/appinternals_agent_latest_linux ${appinternals_install_stdin}":
+  exec {"appinternals_agent_latest_linux ${appinternals_install_stdin}":
     path        => '/home/opnet',
+    refreshonly => true,
+    notify      => Exec['dsactl start'],
+  }
+
+  # Run the script onetime after unpack
+  exec {'dsactl start':
+    path        => '/opt/opnet/Panorama/hedzup/mn/bin',
+    user        => 'opnet',
     refreshonly => true,
   }
 }
