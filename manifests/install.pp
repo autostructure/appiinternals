@@ -7,19 +7,17 @@ class appinternals::install {
   user {'opnet':
     ensure => present,
     home   => '/home/opnet',
-    before => Archive['/var/cache/puppet/appinternals_agent_latest_linux.gz'],
+    before => ::Staging::Deploy['appinternals_agent_latest_linux.gz'],
   }
 
-  # Grab file
-  archive { '/var/cache/puppet/appinternals_agent_latest_linux.gz':
-    source       => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
-    extract      => true,
-    extract_path => '/home/opnet',
-    notify       => File['/home/opnet/appinternals_agent_latest_linux'],
+  staging::deploy { 'appinternals_agent_latest_linux.gz':
+    source => 'http://download.appinternals.com/agents/a/appinternals_agent_latest_linux.gz',
+    target => '/home/opnet',
+    notify => File['/home/opnet/appinternals_agent_latest_linux'],
   }
 
   # Make sure script is executable
   file {'/home/opnet/appinternals_agent_latest_linux':
-    mode   => '0755',
+    mode => '0755',
   }
 }
