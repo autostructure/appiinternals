@@ -17,6 +17,12 @@ class appinternals::install {
     END
     | EOT
 
+  # Create opnet user home directory
+  file {'/home/opnet':
+    ensure => directory,
+    before => User['opnet'],
+  }
+
   # Create opnet user
   user {'opnet':
     ensure => present,
