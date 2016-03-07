@@ -4,11 +4,11 @@
 # It ensure the service is running.
 #
 class appinternals::service {
-
-  #  service { $::appinternals::service_name:
-  #  ensure     => running,
-  #  enable     => true,
-  #  hasstatus  => true,
-  #  hasrestart => true,
-  #}
+  # Starts the service up
+  service { $::appinternals::service_name:
+    ensure     => running,
+    enable     => true,
+    hasstatus  => true,
+    hasrestart => true,
+  }
 }

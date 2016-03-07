@@ -44,7 +44,8 @@ class appinternals::install {
   # Make sure script is executable
   file {'/home/opnet/appinternals_agent_latest_linux':
     mode   => '0755',
-    before => Exec["appinternals_agent_latest_linux ${appinternals_install_stdin}"],
+    before =>
+      Exec["appinternals_agent_latest_linux ${appinternals_install_stdin}"],
   }
 
   # Run the script onetime after unpack
