@@ -4,14 +4,14 @@
 #
 class appinternals::install {
   # Appinsternals install script
-  $appinternals_install_stdin = @(EOT)
+  $appinternals_install_stdin = @("EOT")
     <<END
     1
     /tmp
     opnet
     /opt/opnet
     y
-    10.250.32.21
+    $::appinternals::analysis_server
     y
     yes
     END

@@ -11,11 +11,12 @@
 #   e.g. "Specify one or more upstream ntp servers as an array."
 #
 class appinternals (
-  #  $package_name = $::appinternals::params::package_name,
-  #$service_name = $::appinternals::params::service_name,
+  $analysis_server = $::appinternals::params::analysis_server,
 ) inherits ::appinternals::params {
-
   # validate parameters here
+  unless $analysis_server {
+    fail('Analysis server hostname by nodename, FQDN, or ip address is required')
+  }
 
   class { '::appinternals::install': } ->
   class { '::appinternals::config': } ~>
