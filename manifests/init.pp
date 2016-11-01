@@ -14,6 +14,7 @@ class appinternals (
   String $analysis_server,
   String $download_file_url,
 ) {
+  class { '::appinternals::pre_install': } ->
   class { '::appinternals::install': } ->
   class { '::appinternals::config': } ~>
   class { '::appinternals::service': } ->
