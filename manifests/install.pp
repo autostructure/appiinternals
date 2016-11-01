@@ -17,15 +17,6 @@ class appinternals::install {
     END
     | EOT
 
-  # Download latest install and unpack to opnet home dir
-  staging::deploy { 'appinternals_agent_latest_linux.gz':
-    source => 'http://artifactory.azcender.com/artifactory/application-release-local/com/appinternals/appinternals_agent_linux/appinternals_agent_linux-v10.4.0.582.gz',
-    target => '/tmp',
-    notify => [
-      File['/tmp/appinternals_agent_latest_linux']
-    ],
-  }
-
   # Make sure script is executable
   file {'/tmp/appinternals_agent_latest_linux':
     mode   => '0755',
