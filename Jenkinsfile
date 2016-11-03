@@ -18,9 +18,11 @@ node {
 
   checkout scm
 
-  docker.image('ruby') {
+  docker.image('ruby').inside('--name ruby') {
     stage('Install Gems') {
-      rvm 'gem install bundler -N'
+      sh 'gem install bundler'
+
+      sh 'bundle install'
     }
   }
 
