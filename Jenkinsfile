@@ -26,7 +26,7 @@ node {
 
       //sh 'bundle install'
 
-      sh 'rake'
+      sh 'bundle exec rake test'
     }
   }
 
