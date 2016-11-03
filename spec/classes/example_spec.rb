@@ -28,7 +28,7 @@ describe 'appinternals' do
       let(:facts) do
         {
           :osfamily        => 'Solaris',
-          :operatingsystem => 'Nexenta',
+          :operatingsystem => 'Nexenta'
         }
       end
 

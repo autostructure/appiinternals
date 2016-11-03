@@ -171,6 +171,9 @@ Style/ClassCheck:
 Metrics/ClassLength:
   Enabled: false
 
+Metrics/BlockLength:
+  Enabled: false
+
 Style/ClassMethods:
   Enabled: false
 
