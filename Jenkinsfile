@@ -22,6 +22,8 @@ node {
     stage('Install Gems') {
       sh 'gem install bundler'
 
+      sh 'mkhomedir_helper root'
+
       sh 'bundle update'
 
       //sh 'bundle install'
