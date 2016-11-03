@@ -16,13 +16,13 @@ node('docker') {
 
   def buildInfo = Artifactory.newBuildInfo()
 
-  stage('Build') {
-    checkout scm
-  }
-
   // stage('Build') {
-  //   git 'https://github.com/autostructure/java-sample.git'
+  //   checkout scm
   // }
+
+  stage('Build') {
+   git 'https://github.com/autostructure/java-sample.git'
+  }
 
   // stage('Artifactory configuration') {
   //   def server = Artifactory.newServer url: 'http://artifactory:8081/artifactory', username: 'admin', password: 'password'
