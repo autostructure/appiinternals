@@ -22,7 +22,9 @@ node {
     stage('Install Gems') {
       sh 'gem install bundler'
 
-      sh 'bundle install'
+      sh 'bundle update'
+
+      //sh 'bundle install'
 
       sh 'rake'
     }
