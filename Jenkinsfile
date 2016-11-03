@@ -23,6 +23,8 @@ node {
       sh 'gem install bundler'
 
       sh 'bundle install'
+
+      sh 'rake'
     }
   }
 
