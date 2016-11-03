@@ -4,7 +4,7 @@
 #
 class appinternals::install {
   # Appinsternals install script
-  $appinternals_install_stdin = @('EOT')
+  $appinternals_install_stdin = @(EOT)
     <<END
     1
     /tmp

@@ -18,15 +18,11 @@ node {
 
   checkout scm
 
-  docker.image('ruby').inside('--name ruby') {
+  docker.image('ruby').inside('--user root --name ruby') {
     stage('Install Gems') {
       sh 'gem install bundler'
 
-      sh 'mkhomedir_helper root'
-
       sh 'bundle update'
-
-      //sh 'bundle install'
 
       sh 'bundle exec rake test'
     }
