@@ -2,7 +2,7 @@
 // Jenkinsfile
 // Build and test a Maven project
 
-node('docker') {
+node {
   def mvnHome = tool 'M3'
 
   // def server = Artifactory.newServer url: 'http://artifactory.azcender.com:8081/artifactory', username: 'admin', password: 'password'
@@ -16,12 +16,12 @@ node('docker') {
 
   def buildInfo = Artifactory.newBuildInfo()
 
-  // stage('Build') {
-  //   checkout scm
-  // }
+  checkout scm
 
-  stage('Build') {
-   git 'https://github.com/autostructure/java-sample.git'
+  docker.image('ruby') {
+    stage('Install Gems') {
+      rvm 'gem install bundler -N'
+    }
   }
 
   // stage('Artifactory configuration') {
