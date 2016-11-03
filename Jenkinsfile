@@ -20,7 +20,7 @@ node {
 
   docker.image('ruby').inside('--user root --name ruby') {
     stage('Install Gems') {
-      sh 'gem install bundler'
+      sh 'gem install bundler --without development system_tests'
 
       sh 'bundle update'
 
