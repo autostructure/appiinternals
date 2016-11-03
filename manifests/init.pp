@@ -11,8 +11,15 @@
 #   e.g. "Specify one or more upstream ntp servers as an array."
 #
 class appinternals (
-  String $analysis_server,
-  String $download_file_url,
+  String            $analysis_server,
+  String            $download_file_url,
+  String            $user_account,
+  String            $install_directory,
+  String            $extract_directory,
+  String            $analysis_server_host,
+  Optional[Integer] $analysis_server_port,
+  Boolean           $is_analysis_server_secure = false,
+  Boolean           $is_auto_instrument = true,
 ) {
   class { '::appinternals::pre_install': } ->
   class { '::appinternals::install': } ->
