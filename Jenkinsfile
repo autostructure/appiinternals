@@ -16,7 +16,9 @@ node('docker') {
 
   def buildInfo = Artifactory.newBuildInfo()
 
-  checkout scm
+  stage('Build') {
+    checkout scm
+  }
 
   // stage('Build') {
   //   git 'https://github.com/autostructure/java-sample.git'
