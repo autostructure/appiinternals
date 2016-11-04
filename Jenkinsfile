@@ -22,6 +22,8 @@ node {
     stage('Install Gems') {
       sh 'gem install facter'
 
+      sh 'facter staging_http_get'
+
       sh 'bundle exec rake test'
     }
   }
