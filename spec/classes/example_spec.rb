@@ -17,7 +17,9 @@ describe 'appinternals' do
     on_supported_os.each do |os, facts|
       context "on #{os}" do
         let(:facts) do
-          facts
+          {
+          :staging_http_get => 'curl'
+        }
         end
 
         context "appinternals class without any parameters" do
