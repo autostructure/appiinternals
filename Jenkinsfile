@@ -20,7 +20,7 @@ node {
 
   docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby') {
     stage('Install Gems') {
-      sh 'adduser --home-dir /home/s_user s_user'
+      sh 'adduser s_user'
 
       sh 'bundle exec rake test'
     }
