@@ -20,14 +20,15 @@ class appinternals (
   Boolean           $is_analysis_server_secure = false,
   Boolean           $is_auto_instrument = true,
 ) {
-  contain ::appinternals::pre_install
-  contain ::appinternals::install
-  contain ::appinternals::config
-  contain ::appinternals::service
 
   class { '::appinternals::pre_install': } ->
   class { '::appinternals::install': } ->
   class { '::appinternals::config': } ~>
   class { '::appinternals::service': } ->
   Class['::appinternals']
+
+    contain ::appinternals::pre_install
+    contain ::appinternals::install
+    contain ::appinternals::config
+    contain ::appinternals::service
 }
