@@ -16,7 +16,7 @@ class appinternals (
   String            $install_directory,
   String            $extract_directory,
   String            $analysis_server_host,
-  Optional[Integer] $analysis_server_port,
+  Optional[Integer] $analysis_server_port = undef,
   Boolean           $is_analysis_server_secure = false,
   Boolean           $is_auto_instrument = true,
 ) {
