@@ -2,5 +2,6 @@ fixtures:
   forge_modules:
     stdlib:    'puppetlabs/stdlib'
     accounts:  'puppetlabs/accounts'
+    staging: 'nanliu/staging'
   symlinks:
     appinternals: "#{source_dir}"
