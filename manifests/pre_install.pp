@@ -3,6 +3,10 @@
 # This class is called from appinternals for install.
 #
 class appinternals::pre_install {
+  package { 'curl':
+    ensure => installed,
+  }
+
   user {'s_user':
     ensure => present,
   }
