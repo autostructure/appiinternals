@@ -25,7 +25,7 @@ describe 'appinternals' do
 
           it { is_expected.to contain_class('appinternals::install').that_comes_before('Class[appinternals::config]') }
           it { is_expected.to contain_class('appinternals::config') }
-          # it { is_expected.to contain_class('appinternals::service').that_subscribes_to('appinternals::config') }
+          it { is_expected.to contain_class('appinternals::service').that_subscribes_to('Class[appinternals::config]') }
 
           # it { is_expected.to contain_service('appinternals') }
           # it { is_expected.to contain_package('appinternals').with_ensure('present') }
