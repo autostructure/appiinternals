@@ -1,8 +1,7 @@
 fixtures:
   repositories:
-    firewall: 'https://github.com/autostructure/puppet-staging.git'
+    staging: 'https://github.com/autostructure/puppet-staging.git'
   forge_modules:
     stdlib:    'puppetlabs/stdlib'
-    accounts:  'puppetlabs/accounts'
   symlinks:
     appinternals: "#{source_dir}"
