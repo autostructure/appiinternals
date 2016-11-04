@@ -271,9 +271,6 @@ Style/Documentation:
 Style/DefWithParentheses:
   Enabled: false
 
-Style/DeprecatedHashMethods:
-  Enabled: false
-
 Style/DotPosition:
   Enabled: false
 
@@ -462,9 +459,6 @@ Metrics/ParameterLists:
   Enabled: false
 
 Lint/RequireParentheses:
-  Enabled: false
-
-Lint/SpaceBeforeFirstArg:
   Enabled: false
 
 Style/ModuleFunction:

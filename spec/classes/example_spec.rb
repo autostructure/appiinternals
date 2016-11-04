@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe 'appinternals' do
+  let(:params) do
+    {
+      download_file_url: 'http://artifactory.azcender.com/artifactory/application-release-local/com/appinternals/appinternals_agent_linux/appinternals_agent_linux-v10.4.0.582.gz',
+      user_account: 'S_ACCOUNT',
+      install_directory: '/opt/account',
+      extract_directory: '/tmp',
+      analysis_server_host: '10.0.0.0',
+      is_analysis_server_secure: false,
+      is_auto_instrument: true
+    }
+  end
+
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
       context "on #{os}" do

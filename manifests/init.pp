@@ -11,7 +11,6 @@
 #   e.g. "Specify one or more upstream ntp servers as an array."
 #
 class appinternals (
-  String            $analysis_server,
   String            $download_file_url,
   String            $user_account,
   String            $install_directory,

@@ -3,8 +3,6 @@
 # This class is called from appinternals for install.
 #
 class appinternals::pre_install {
-  #  gid      => 1000,
-
   accounts::user { 'S_RIVERBED':
     uid      => 1134213252,
     shell    => '/bin/bash',
