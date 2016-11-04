@@ -18,12 +18,8 @@ node {
 
   checkout scm
 
-  docker.image('ruby').inside('--user root --name ruby') {
+  docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby') {
     stage('Install Gems') {
-      sh 'gem install bundler'
-
-      sh 'bundle update'
-
       sh 'bundle exec rake test'
     }
   }
