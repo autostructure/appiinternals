@@ -23,7 +23,7 @@ describe 'appinternals' do
         context "appinternals class without any parameters" do
           it { is_expected.to compile.with_all_deps }
 
-          it { is_expected.to contain_class('appinternals::install').that_comes_before(Class['appinternals::config']) }
+          it { is_expected.to contain_class('appinternals::install').that_comes_before('Class[appinternals::config]') }
           it { is_expected.to contain_class('appinternals::config') }
           # it { is_expected.to contain_class('appinternals::service').that_subscribes_to('appinternals::config') }
 
