@@ -34,16 +34,16 @@ describe 'appinternals' do
     end
   end
 
-  context 'unsupported operating system' do
-    describe 'appinternals class without any parameters on Solaris/Nexenta' do
-      let(:facts) do
-        {
-          :osfamily        => 'Solaris',
-          :operatingsystem => 'Nexenta'
-        }
-      end
+  # context 'unsupported operating system' do
+  #   describe 'appinternals class without any parameters on Solaris/Nexenta' do
+  #     let(:facts) do
+  #       {
+  #         :osfamily        => 'Solaris',
+  #         :operatingsystem => 'Nexenta'
+  #       }
+  #     end
 
-      it { expect { is_expected.to contain_package('appinternals') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
-    end
-  end
+  #     it { expect { is_expected.to contain_package('appinternals') }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+  #   end
+  # end
 end
