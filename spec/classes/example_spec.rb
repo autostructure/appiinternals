@@ -13,8 +13,6 @@ describe 'appinternals' do
     }
   end
 
-  let(:facts) { { :staging_http_get => 'curl' } }
-
   context 'supported operating systems' do
     on_supported_os.each do |os, facts|
       context "on #{os}" do
@@ -25,12 +23,12 @@ describe 'appinternals' do
         context "appinternals class without any parameters" do
           it { is_expected.to compile.with_all_deps }
 
-          it { is_expected.to contain_class('appinternals::install').that_comes_before('appinternals::config') }
+          # it { is_expected.to contain_class('appinternals::install').that_comes_before('appinternals::config') }
           it { is_expected.to contain_class('appinternals::config') }
-          it { is_expected.to contain_class('appinternals::service').that_subscribes_to('appinternals::config') }
+          # it { is_expected.to contain_class('appinternals::service').that_subscribes_to('appinternals::config') }
 
-          it { is_expected.to contain_service('appinternals') }
-          it { is_expected.to contain_package('appinternals').with_ensure('present') }
+          # it { is_expected.to contain_service('appinternals') }
+          # it { is_expected.to contain_package('appinternals').with_ensure('present') }
         end
       end
     end
