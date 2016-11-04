@@ -5,6 +5,7 @@
 class appinternals::pre_install {
   package { 'curl':
     ensure => installed,
+    before => ::Staging::Deploy['appinternals_agent_latest_linux.gz'],
   }
 
   user {'s_user':
