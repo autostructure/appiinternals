@@ -25,10 +25,9 @@ describe 'appinternals' do
         context "appinternals class without any parameters" do
           it { is_expected.to compile.with_all_deps }
 
-          it { is_expected.to contain_class('appinternals::params') }
-          it { is_expected.to contain_class('appinternals::install').that_comes_before('appinternals::config') }
-          it { is_expected.to contain_class('appinternals::config') }
-          it { is_expected.to contain_class('appinternals::service').that_subscribes_to('appinternals::config') }
+          it { is_expected.to contain_class('appinternals__install').that_comes_before('appinternals__config') }
+          it { is_expected.to contain_class('appinternals__config') }
+          it { is_expected.to contain_class('appinternals__service').that_subscribes_to('appinternals__config') }
 
           it { is_expected.to contain_service('appinternals') }
           it { is_expected.to contain_package('appinternals').with_ensure('present') }

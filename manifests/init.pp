@@ -26,9 +26,4 @@ class appinternals (
   class { '::appinternals::config': } ~>
   class { '::appinternals::service': } ->
   Class['::appinternals']
-
-    contain ::appinternals::pre_install
-    contain ::appinternals::install
-    contain ::appinternals::config
-    contain ::appinternals::service
 }
