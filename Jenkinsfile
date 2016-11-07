@@ -20,7 +20,7 @@ node {
 
   docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby') {
     stage('Install Gems') {
-      sh 'bundle exec rake validate lint spec'
+      sh 'bundle exec rake validate lint'
     }
   }
 
