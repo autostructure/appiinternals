@@ -10,6 +10,8 @@ class appinternals::install {
       Exec['appinternals_agent_latest_linux install.sh'],
   }
 
+  notify { $potato: }
+
   # Run the script onetime after unpack
   exec {'appinternals_agent_latest_linux install.sh':
     path        => '/tmp',

@@ -23,9 +23,13 @@ node {
       sh 'bundle exec rake validate'
     }
 
-      stage('Do Lint') {
-        sh 'bundle exec rake lint'
-      }
+    stage('Do Lint') {
+      sh 'bundle exec rake lint'
+    }
+
+    stage('Do Specs') {
+      sh 'bundle exec rake spec'
+    }
   }
 
   // stage('Artifactory configuration') {
