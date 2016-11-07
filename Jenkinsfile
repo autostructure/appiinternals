@@ -24,7 +24,7 @@ node {
     }
 
       stage('Do Lint') {
-        sh 'bundle exec lint'
+        sh 'bundle exec rake lint'
       }
   }
 
