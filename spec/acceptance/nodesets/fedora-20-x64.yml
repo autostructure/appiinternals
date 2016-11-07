@@ -5,7 +5,7 @@ HOSTS:
     platform: el-7-x86_64
     box: chef/fedora-20
     box_url: https://vagrantcloud.com/chef/boxes/fedora-20
-    hypervisor: vagrant
+    hypervisor: docker
 
 CONFIG:
   log_level: verbose
