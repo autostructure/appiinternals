@@ -19,17 +19,17 @@ node {
   checkout scm
 
   docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby') {
-    stage('Do Rake and Validate') {
+    stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
     }
 
-    stage('Do Lint') {
+    stage('Do Puppet Code Lint') {
       sh 'bundle exec rake lint'
     }
 
-    stage('Do Specs') {
-      sh 'bundle exec rake spec'
-    }
+    // stage('Do Puppet OS Specs') {
+    //   sh 'bundle exec rake spec'
+    // }
   }
 
   // stage('Artifactory configuration') {
