@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 // Jenkinsfile
 // Build and test a Maven project
+//
 
 node {
   def mvnHome = tool 'M3'
