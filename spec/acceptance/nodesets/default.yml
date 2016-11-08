@@ -8,7 +8,8 @@ HOSTS:
       - agent
     docker_preserve_image: true
     docker_cmd: ["sh", "-c", "systemd ssh start ; tail -f /dev/null"]
-  #  docker_image_commands:
+    docker_image_commands:
+      - /sbin/sshd
   #      - wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
   #      - sudo dpkg -i puppetlabs-release-pc1-trusty.deb
   #      - sudo apt-get update -yq
