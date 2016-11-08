@@ -1,10 +1,9 @@
 HOSTS:
   centos-7-x64:
-    roles:
-      - master
     platform: centos-7-x86_64
-    image: jdeathe/centos-ssh:latest
+    image: centos:7
     hypervisor: docker
+    docker_preserve_image: true
 CONFIG:
   log_level: verbose
   type: foss
