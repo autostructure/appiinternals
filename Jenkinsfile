@@ -18,7 +18,7 @@ node {
 
   checkout scm
 
-  docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby -v /var/run/docker.sock:/var/run/docker.sock') {
+  docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby') {
     stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
     }
