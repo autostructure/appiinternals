@@ -18,7 +18,7 @@ node {
 
   checkout scm
 
-  docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby') {
+  docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby --privileged') {
     stage('Start Docker Service') {
       sh 'service docker start'
     }
