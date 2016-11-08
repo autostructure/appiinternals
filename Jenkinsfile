@@ -104,8 +104,6 @@ def withRvm(version, gemset, cl) {
 
     def path = paths.join(':')
 
-    echo $path
-
     withEnv(["PATH=${env.PATH}:$RVM_HOME", "RVM_HOME=$RVM_HOME"]) {
         sh "set +x; source $RVM_HOME/scripts/rvm; rvm use --create --install --binary $version@$gemset"
     }
