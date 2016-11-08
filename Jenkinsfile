@@ -22,11 +22,11 @@ node {
   //   stage('Start Docker Service') {
   //     sh 'service docker start'
   //   }
-  stage('Ruby Install') {
-    sh 'gem install bundler --no-ri --no-rdoc'
-  }
 
   withRvm('ruby-2.3.0') {
+    stage('Ruby Install') {
+      sh 'gem install bundler --no-ri --no-rdoc'
+    }
 
     stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
