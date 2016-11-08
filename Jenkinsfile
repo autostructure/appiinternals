@@ -26,7 +26,7 @@ node {
     sh 'gem install bundler --no-ri --no-rdoc'
   }
 
-  // withRvm('ruby-2.3.1') {
+  withRvm('ruby-2.3.0') {
 
     stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
@@ -40,7 +40,7 @@ node {
      sh 'bundle exec rake spec'
     }
   // }
-  // }
+  }
 
   // stage('Artifactory configuration') {
   //   def server = Artifactory.newServer url: 'http://artifactory:8081/artifactory', username: 'admin', password: 'password'
