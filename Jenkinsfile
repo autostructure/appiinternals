@@ -120,4 +120,3 @@ def withRvm(version, gemset, cl) {
             cl()
         }
     }
-}
