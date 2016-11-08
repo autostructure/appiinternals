@@ -23,9 +23,9 @@ node {
   //     sh 'service docker start'
   //   }
 
-  // withRvm('ruby-2.3.0') {
-    stage('Ruby Install') {
-      sh 'gem install bundler --no-ri --no-rdoc'
+  withRvm('ruby-2.3.0') {
+    stage('Ruby Gems') {
+      sh 'bundle install'
     }
 
     stage('Do Puppet Code Validation') {
@@ -39,7 +39,7 @@ node {
     stage('Do Puppet OS Specs') {
      sh 'bundle exec rake spec'
     }
-  // }
+  }
   // }
 
   // stage('Artifactory configuration') {
