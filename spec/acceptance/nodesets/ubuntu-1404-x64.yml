@@ -1,7 +1,7 @@
 ---
 HOSTS:
   ubuntu-14-04:
-    platform: ubuntu-14-04
+    platform: ubuntu-1404-x64
     image: ubuntu:14.04
     hypervisor: docker
     roles:
