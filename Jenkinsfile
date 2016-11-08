@@ -27,9 +27,9 @@ node {
       sh 'bundle exec rake lint'
     }
 
-    // stage('Do Puppet OS Specs') {
-    //   sh 'bundle exec rake spec'
-    // }
+    stage('Do Puppet OS Specs') {
+     sh 'bundle exec rake spec'
+    }
   }
 
   // stage('Artifactory configuration') {
