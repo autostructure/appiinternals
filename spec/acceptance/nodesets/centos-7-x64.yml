@@ -3,7 +3,7 @@ HOSTS:
     roles:
       - master
     platform: centos-7-x86_64
-    image: centos:7
+    image: jdeathe/centos-ssh:latest
     hypervisor: docker
 CONFIG:
   log_level: verbose
