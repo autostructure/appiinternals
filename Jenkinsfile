@@ -26,6 +26,8 @@ node {
     sh 'echo $PATH'
   }
 
+  withRvm('ruby-2.3.1') {
+
     stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
     }
@@ -37,6 +39,7 @@ node {
     stage('Do Puppet OS Specs') {
      sh 'bundle exec rake spec'
     }
+  }
   // }
 
   // stage('Artifactory configuration') {
