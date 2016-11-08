@@ -18,10 +18,11 @@ node {
 
   checkout scm
 
-  docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby --privileged') {
-    stage('Start Docker Service') {
-      sh 'service docker start'
-    }
+  // docker.image('docker-local.docker.azcender.com/puppet-tester').inside('--user root --name ruby --privileged') {
+  //   stage('Start Docker Service') {
+  //     sh 'service docker start'
+  //   }
+
     stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
     }
@@ -33,7 +34,7 @@ node {
     stage('Do Puppet OS Specs') {
      sh 'bundle exec rake spec'
     }
-  }
+  // }
 
   // stage('Artifactory configuration') {
   //   def server = Artifactory.newServer url: 'http://artifactory:8081/artifactory', username: 'admin', password: 'password'
