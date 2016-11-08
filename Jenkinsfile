@@ -23,6 +23,8 @@ node {
   //     sh 'service docker start'
   //   }
 
+  sh 'echo $PATH'
+
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
       sh 'bundle install'
