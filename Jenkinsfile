@@ -22,6 +22,9 @@ node {
   //   stage('Start Docker Service') {
   //     sh 'service docker start'
   //   }
+  stage('Echo PATH') {
+    sh 'echo $PATH'
+  }
 
     stage('Do Puppet Code Validation') {
       sh 'bundle exec rake validate'
