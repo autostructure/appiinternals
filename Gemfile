@@ -7,7 +7,7 @@ group :test do
   gem "rspec-puppet" #, :git => 'https://github.com/rodjek/rspec-puppet.git'
   gem "puppetlabs_spec_helper"
   gem "metadata-json-lint"
-  gem "rspec-puppet-facts"
+  gem 'rspec-puppet-facts'
   gem 'rubocop' # , '0.33.0'
   gem 'simplecov' # , '>= 0.11.0'
   gem 'simplecov-console'

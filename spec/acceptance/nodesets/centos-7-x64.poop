@@ -1,9 +1,0 @@
-HOSTS:
-  centos-7-x64:
-    platform: centos-7-x86_64
-    image: centos:7
-    hypervisor: docker
-    docker_preserve_image: true
-CONFIG:
-  log_level: verbose
-  type: foss
