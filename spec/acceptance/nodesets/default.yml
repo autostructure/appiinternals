@@ -19,4 +19,4 @@ CONFIG:
   type: foss
 ssh:
   password: root
-  auth_methods: ["password"]
+  auth_methods: ["root"]
