@@ -1,0 +1,20 @@
+<%- | String            $user_account,
+      String            $install_directory,
+      String            $extract_directory,
+      String            $analysis_server_host,
+      Optional[Integer] $analysis_server_port,
+      Boolean           $is_analysis_server_secure = false,
+      Boolean           $is_auto_instrument = true,
+| -%>
+#!/bin/sh
+# Copyright (c) 2015 Riverbed Technology, Inc. All rights reserved.
+# These options control aspects of the overall managed node installation.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+O_SI_USERACCOUNT="<%= $user_account %>"
+INSTALLDIR="<%= $install_directory %>"
+O_SI_EXTRACTDIR="<%= $extract_directory %>"
+O_SI_ANALYSIS_SERVER_HOST="<%= $analysis_server_host %>"
+O_SI_ANALYSIS_SERVER_PORT="<%= $analysis_server_port %>"
+O_SI_ANALYSIS_SERVER_SECURE="<%= $is_analysis_server_secure %>"
+O_SI_AUTO_INSTRUMENT="<%= $is_auto_instrument %>"
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
