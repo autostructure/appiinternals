@@ -6,7 +6,7 @@ class appinternals::install {
   # Make sure script is executable
   file {'/tmp/appinternals_agent_latest_linux':
     mode   => '0755',
-    before =>
+    notify =>
       Exec['appinternals_agent_latest_linux install.sh'],
   }
 
