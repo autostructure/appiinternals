@@ -2,21 +2,14 @@
 HOSTS:
   centos-7-x64:
     platform: centos-7-x64
-    image: centos:7
-    hypervisor: docker
+    # box_url: https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-nocm
+    box: centos/7
+    hypervisor: vagrant
     roles:
       - agent
-    docker_preserve_image: true
-    docker_cmd: ["sh", "-c", "/sbin/sshd ; tail -f /dev/null"]
-  #  docker_image_commands:
-  #     - /sbin/sshd
-  #      - wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
-  #      - sudo dpkg -i puppetlabs-release-pc1-trusty.deb
-  #      - sudo apt-get update -yq
-  #      - sudo apt-get -o Dpkg::Options::="--force-confold" install -yq puppet-agent=1.5.2-1trusty
 CONFIG:
   log_level: verbose
   type: foss
 ssh:
   password: root
-  auth_methods: ["root"]
+  auth_methods: ["password"]
