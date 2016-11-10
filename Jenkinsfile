@@ -25,7 +25,7 @@ node {
 
   sh 'echo $PATH'
 
-  withRvm('ruby-2.3.1') {
+  withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
       sh 'bundle install'
     }
