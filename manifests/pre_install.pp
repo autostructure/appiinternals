@@ -22,6 +22,6 @@ class appinternals::pre_install {
         is_analysis_server_secure => $::appinternals::is_analysis_server_secure,
         is_auto_instrument        => $::appinternals::is_auto_instrument,
       },
-    )
+    ),
   }
 }
