@@ -13,8 +13,9 @@ describe 'Acceptance case one' do
         analysis_server_host      => '10.0.0.0',
         is_analysis_server_secure => false,
         is_auto_instrument        => true,
+        c00l = beans,
        }
-      EOS
+       EOS
 
       # Run it twice and test for idempotency
       apply_manifest(pp, :catch_failures => true)
