@@ -13,7 +13,6 @@ describe 'Acceptance case one' do
         analysis_server_host      => '10.0.0.0',
         is_analysis_server_secure => false,
         is_auto_instrument        => true,
-        c00l = beans,
        }
        EOS
 
