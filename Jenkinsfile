@@ -30,8 +30,8 @@ node {
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
       // sh 'gem uninstall hiera-puppet'
-      // sh 'bundle install'
-      sh 'bundle update'
+      sh 'bundle install'
+      // sh 'bundle update'
     }
 
     stage('Do Puppet Code Validation') {
@@ -123,7 +123,7 @@ def withRvm(version, gemset, cl) {
         "IRBRC=$RVM_HOME/rubies/$version/.irbrc",
         "RUBY_VERSION=$version"
         ]) {
-            // sh 'gem install bundler'
+            sh 'gem install bundler'
             cl()
         }
     }
