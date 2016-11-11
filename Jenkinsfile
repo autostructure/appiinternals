@@ -27,7 +27,7 @@ node {
 
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
-      sh 'gem uninstall puppet 4.8.0'
+      sh 'gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
       sh 'bundle install'
     }
 
