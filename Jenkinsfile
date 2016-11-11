@@ -27,8 +27,9 @@ node {
 
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
-      sh 'gem uninstall -I puppet'
-      sh 'bundle install'
+      // sh 'gem uninstall -I puppet'
+      // sh 'bundle install'
+      sh 'bundle update puppet'
     }
 
     stage('Do Puppet Code Validation') {
