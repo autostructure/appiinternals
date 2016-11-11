@@ -3,7 +3,7 @@ require 'beaker-rspec/helpers/serverspec'
 require 'beaker/puppet_install_helper'
 
 ENV['PUPPET_INSTALL_TYPE'] = 'foss'
-ENV['PUPPET_INSTALL_VERSION'] = '4.8'
+# ENV['PUPPET_INSTALL_VERSION'] = '4.8'
 
 
 run_puppet_install_helper
