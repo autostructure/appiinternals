@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'appinternals' do
+describe 'appinternals', :type => :class do
   let(:params) do
     {
       download_file_url: 'http://artifactory.azcender.com/artifactory/application-release-local/com/appinternals/appinternals_agent_linux/appinternals_agent_linux-v10.4.0.582.gz',
