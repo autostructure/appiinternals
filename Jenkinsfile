@@ -29,7 +29,7 @@ node {
     stage('Ruby Gems') {
       // sh 'gem uninstall -I puppet'
       // sh 'bundle install'
-      sh 'bundle update puppet'
+      sh 'bundle update'
     }
 
     stage('Do Puppet Code Validation') {
