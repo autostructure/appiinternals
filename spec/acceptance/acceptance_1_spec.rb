@@ -1,6 +1,6 @@
 require 'spec_helper_acceptance'
 
-describe 'Acceptance case one', :unless => stop_test do
+describe 'Acceptance case one' do
   context 'Initial install Appinternals and verification' do
     # Using puppet_apply as a helper
     it 'should work idempotently with no errors' do
