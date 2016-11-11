@@ -27,7 +27,6 @@ node {
 
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
-      sh 'gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
       sh 'bundle install'
     }
 
