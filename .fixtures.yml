@@ -1,6 +1,6 @@
 fixtures:
   repositories:
     stdlib:  https://github.com/puppetlabs/puppetlabs-stdlib.git
-    staging: https://github.com/voxpupuli/puppet-staging
+    staging: https://github.com/autostructure/puppet-staging.git
   symlinks:
     appinternals: "#{source_dir}"
