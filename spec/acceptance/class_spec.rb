@@ -1,4 +1,4 @@
-require 'spec_helper_acceptance'
+require 'spec_helper'
 
 describe 'appinternals class' do
   context 'default parameters' do
