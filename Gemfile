@@ -38,6 +38,21 @@ source "https://rubygems.org"
 #   gem "beaker-puppet_install_helper"
 # end
 
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
+
+def location_from_env(env, default_location = [])
+  if location = ENV[env]
+    if location =~ /^((?:git|https?)[:@][^#]*)#(.*)/
+      [{ :git => $1, :branch => $2, :require => false }]
+    elsif location =~ /^file:\/\/(.*)/
+      ['>= 0', { :path => File.expand_path($1), :require => false }]
+    else
+      [location, { :require => false }]
+    end
+  else
+    default_location
+  end
+end
 
 group :development, :unit_tests do
   gem 'metadata-json-lint'
