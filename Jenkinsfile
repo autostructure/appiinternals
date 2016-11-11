@@ -27,7 +27,6 @@ node {
 
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
-      sh 'gem search --local --no-version | tail -n +3 | xargs gem uninstall --all'
       sh 'bundle install'
     }
 
