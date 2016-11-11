@@ -1,8 +1,8 @@
 require 'beaker-rspec/spec_helper'
 require 'beaker-rspec/helpers/serverspec'
-require 'beaker/puppet_install_helper'
+# require 'beaker/puppet_install_helper'
 
-ENV['PUPPET_INSTALL_TYPE'] = 'foss'
+# ENV['PUPPET_INSTALL_TYPE'] = 'foss'
 # ENV['PUPPET_INSTALL_VERSION'] = '4.8'
 
 
@@ -22,12 +22,7 @@ RSpec.configure do |c|
     # Install module and dependencies
     puppet_module_install(:source => proj_root, :module_name => 'appinternals')
 
-    install_puppet_on(hosts, {
-      :version          => '4.8.0',
-      :facter_version   => '3.35.0',
-      :hiera_version    => '3.3.0',
-      :default_action   => 'gem_install'
-     })
+    install_puppet_on(hosts)
 
     hosts.each do |host|
       version = ENV['PUPPET_INSTALL_VERSION'] || '4.8.0'
