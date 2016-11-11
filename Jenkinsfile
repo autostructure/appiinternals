@@ -3,6 +3,8 @@
 // Build and test a Maven project
 
 node {
+  deleteDir()
+
   def mvnHome = tool 'M3'
 
   // def server = Artifactory.newServer url: 'http://artifactory.azcender.com:8081/artifactory', username: 'admin', password: 'password'
@@ -27,7 +29,7 @@ node {
 
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
-      // sh 'gem uninstall -I puppet'
+      sh 'gem uninstall hiera-puppet'
       // sh 'bundle install'
       sh 'bundle update'
     }
