@@ -45,6 +45,10 @@ node {
     stage('Do Puppet OS Specs') {
      sh 'bundle exec rake spec'
     }
+
+    stage('Do Puppet Acceptance') {
+     sh 'bundle exec rspec spec/acceptance'
+    }
   }
   // }
 
