@@ -29,7 +29,7 @@ node {
 
   withRvm('ruby-2.3.0') {
     stage('Ruby Gems') {
-      // sh 'gem uninstall hiera-puppet'
+      sh 'gem uninstall hiera-puppet'
       // sh 'bundle install'
       sh 'bundle update'
     }
