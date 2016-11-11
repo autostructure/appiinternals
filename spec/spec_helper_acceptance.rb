@@ -6,7 +6,7 @@ ENV['PUPPET_INSTALL_TYPE'] = 'foss'
 # ENV['PUPPET_INSTALL_VERSION'] = '4.8'
 
 
-run_puppet_install_helper
+# run_puppet_install_helper
 
 UNSUPPORTED_PLATFORMS = [ 'Windows', 'Solaris', 'AIX' ].freeze
 
@@ -22,7 +22,17 @@ RSpec.configure do |c|
     # Install module and dependencies
     puppet_module_install(:source => proj_root, :module_name => 'appinternals')
 
+    install_puppet_on(hosts, {
+      :version          => '4.8.0',
+      :facter_version   => '3.35.0',
+      :hiera_version    => '3.3.0',
+      :default_action   => 'gem_install'
+     })
+
     hosts.each do |host|
+      version = ENV['PUPPET_INSTALL_VERSION'] || '4.8.0'
+      install_puppet(:version => version)
+
       on host, puppet('module','install','puppetlabs-stdlib'), { :acceptable_exit_codes => [0,1] }
       on host, puppet('module','install','puppet-staging'), { :acceptable_exit_codes => [0,1] }
     end
