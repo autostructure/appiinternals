@@ -1,7 +1,7 @@
 ---
 HOSTS:
   centos-7-x64:
-    platform: centos-7-x64
+    platform: el-7-x64
     # box_url: https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-nocm
     box: centos/7
     hypervisor: vagrant
