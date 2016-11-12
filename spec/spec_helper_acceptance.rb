@@ -23,7 +23,8 @@ RSpec.configure do |c|
     puppet_module_install(:source => proj_root, :module_name => 'appinternals')
 
     install_puppet_on(hosts, {
-      :version => '4.8.0'
+      :version => '4.8.0',
+      :default_action   => 'gem_install'
      })
 
     hosts.each do |host|
