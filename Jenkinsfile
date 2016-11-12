@@ -7,6 +7,9 @@ node {
 
   def mvnHome = tool 'M3'
 
+  env.PUPPET_INSTALL_VERSION = "1.5.2"
+  env.PUPPET_INSTALL_TYPE = "agent"
+
   // def server = Artifactory.newServer url: 'http://artifactory.azcender.com:8081/artifactory', username: 'admin', password: 'password'
   def server = Artifactory.server('artifactory')
 
