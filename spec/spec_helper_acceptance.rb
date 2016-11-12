@@ -1,12 +1,12 @@
 require 'beaker-rspec/spec_helper'
 require 'beaker-rspec/helpers/serverspec'
-# require 'beaker/puppet_install_helper'
+require 'beaker/puppet_install_helper'
 
 # ENV['PUPPET_INSTALL_TYPE'] = 'foss'
 # ENV['PUPPET_INSTALL_VERSION'] = '4.8'
 
 
-# run_puppet_install_helper
+run_puppet_install_helper
 
 UNSUPPORTED_PLATFORMS = [ 'Windows', 'Solaris', 'AIX' ].freeze
 
@@ -22,7 +22,7 @@ RSpec.configure do |c|
     # Install module and dependencies
     puppet_module_install(:source => proj_root, :module_name => 'appinternals')
 
-    install_puppet_on(hosts)
+    # install_puppet_on(hosts)
 
     hosts.each do |host|
       puppet_module_install(:source => proj_root, :module_name => 'appinternals')
