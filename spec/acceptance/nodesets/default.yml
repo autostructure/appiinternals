@@ -9,7 +9,7 @@ HOSTS:
       - agent
 CONFIG:
   log_level: verbose
-  type: foss
+  type: aio
 ssh:
   password: root
   auth_methods: ["password"]
