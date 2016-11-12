@@ -17,8 +17,8 @@ describe 'Acceptance case one' do
        EOS
 
       # Run it twice and test for idempotency
-      apply_manifest(pp, :catch_failures => true)
-      apply_manifest(pp, :catch_changes  => true)
+      apply_manifest(pp, :catch_failures => true, :future_parser => true)
+      apply_manifest(pp, :catch_changes  => true, :future_parser => true)
     end
 
     # describe package('appinternals') do
