@@ -31,7 +31,7 @@ node {
     stage('Ruby Gems') {
       // sh 'gem uninstall hiera-puppet'
       // sh 'bundle install'
-      // sh 'bundle update'
+      sh 'bundle update'
     }
 
     stage('Do Puppet Code Validation') {

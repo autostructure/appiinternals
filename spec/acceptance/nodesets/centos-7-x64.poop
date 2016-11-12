@@ -3,13 +3,13 @@ HOSTS:
   centos-7-x64:
     platform: centos-7-x64
     # box_url: https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-nocm
-    box: puppetlabs/centos-7.2-64-nocm 
+    box: puppetlabs/centos-7.2-64-nocm
     hypervisor: vagrant
     roles:
       - agent
 CONFIG:
   log_level: verbose
-  type: foss
+  type: aim
 ssh:
   password: root
   auth_methods: ["password"]
