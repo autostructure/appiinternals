@@ -5,7 +5,6 @@ HOSTS:
     # box_url: https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-nocm
     box: centos/7
     hypervisor: vagrant
-    pe_ver: '4.8.0'
     roles:
       - agent
 CONFIG:
