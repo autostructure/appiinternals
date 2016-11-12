@@ -29,6 +29,7 @@ RSpec.configure do |c|
       # version = ENV['PUPPET_INSTALL_VERSION'] || '4.8.0'
       # install_puppet(:version => version)
 
+      on host, puppet('module','install','autostructure-staging'), { :acceptable_exit_codes => [0,1] }
       on host, puppet('module','install','puppetlabs-stdlib'), { :acceptable_exit_codes => [0,1] }
       on host, puppet('module','install','puppet-staging'), { :acceptable_exit_codes => [0,1] }
     end
