@@ -9,7 +9,7 @@ class appinternals::pre_install {
     target => $::appinternals::extract_directory,
   }
 
-  file {'/tmp/install.sh':
+  file {'/tmp/install.properties':
     ensure  => present,
     content => epp(
       'appinternals/install.properties.epp',
