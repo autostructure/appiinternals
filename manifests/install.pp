@@ -7,7 +7,7 @@ class appinternals::install {
   file {'/tmp/appinternals_agent_latest_linux':
     mode   => '0755',
     notify =>
-      Exec['appinternals_agent_latest_linux install.sh'],
+      Exec['appinternals_agent_latest_linux -silent ./install.properties'],
   }
 
   # Run the script onetime after unpack
