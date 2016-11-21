@@ -1,0 +1,16 @@
+---
+HOSTS:
+  centos-7-x64:
+    platform: el-7-x64
+    box_url: http://artifactory.azcender.com/artifactory/vagrant-local/rhel6_nitc_40gb-virtualbox.box
+    box: autostructure/rhel6_nitc_40gb
+    hypervisor: vagrant
+    pe_ver: '2016.4'
+    roles:
+      - agent
+CONFIG:
+  log_level: verbose
+  type: foss
+ssh:
+  password: root
+  auth_methods: ["password"]
