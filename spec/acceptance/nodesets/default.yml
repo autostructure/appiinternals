@@ -2,7 +2,7 @@
 HOSTS:
   centos-6-x64:
     platform: el-6-x64
-    image: jdeathe/centos-ssh
+    image: pcfens/beaker-centos
     hypervisor: docker
     pe_ver: '2016.4'
     roles:
