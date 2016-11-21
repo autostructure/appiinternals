@@ -30,12 +30,12 @@ node {
 
   sh 'echo $PATH'
 
-  withRvm('ruby-2.3.0') {
+  withRvm('ruby-2.3.2') {
     stage('Ruby Gems') {
       // sh 'gem uninstall hiera-puppet'
-      // sh 'gem install bundler'
-      // sh 'bundle install'
-      sh 'bundle update'
+      sh 'gem install bundler --no-ri --no-rdoc'
+      sh 'bundle install'
+      // sh 'bundle update'
     }
 
     stage('Do Puppet Code Validation') {
