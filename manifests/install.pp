@@ -12,10 +12,9 @@ class appinternals::install {
 
   # Run the script onetime after unpack
   exec {'/tmp/appinternals_agent_latest_linux -silent /tmp/install.properties':
-    cwd         => '/tmp',
-    refreshonly => true,
-    notify      => Exec['dsactl start'],
-    creates     => $::appinternals::install_directory,
+    cwd     => '/tmp',
+    notify  => Exec['dsactl start'],
+    creates => $::appinternals::install_directory,
   }
 
   # Run the script onetime after unpack
