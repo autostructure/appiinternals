@@ -15,13 +15,14 @@ class appinternals::install {
     cwd         => '/tmp',
     refreshonly => true,
     notify      => Exec['dsactl start'],
+    creates     => $::appinternals::install_directory,
   }
 
   # Run the script onetime after unpack
   exec {'dsactl start':
-    cwd         => '/opt/riverbed/Panorama/hedzup/mn/bin',
+    cwd         => "${::appinternals::install_directory}/Panorama/hedzup/mn/bin",
     path        => [
-      '/opt/riverbed/Panorama/hedzup/mn/bin',
+      "${::appinternals::install_directory}/Panorama/hedzup/mn/bin",
       '/usr/local/sbin',
       '/sbin',
       '/bin',
@@ -31,7 +32,7 @@ class appinternals::install {
       '/usr/local/bin',
       '/opt/puppetlabs/bin',
     ],
-    user        => 'S_RIVERBED',
+    user        => $::appinternals::user_account,
     refreshonly => true,
   }
 }
